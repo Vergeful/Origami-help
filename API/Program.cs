@@ -19,13 +19,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseCors(opt => 
 {
-    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5174");
+    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:5173");
 });
 
 app.UseAuthorization();
